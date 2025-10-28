@@ -1,0 +1,29 @@
+@startuml
+
+'Import Icons
+'suref http://plantuml.com/stdlib
+!include <office/Services/email_service.puml>
+!include <office/Concepts/application_hybrid.puml>
+!include <office/Communications/messages_queued.puml>
+
+'Define Diagram Styles
+skinparam componentStyle rectangle
+left to right direction
+
+title Cloudflare Email Worker\n
+
+'Define Systems
+rectangle "Incoming Email\n<$email_service>" as Sender
+usecase [Cloudflare\nEmail Routing\n<$email_service>] as EmailRouting
+usecase [Cloudflare\nWorker\n<$application_hybrid>] as Worker
+usecase [Telegram\n API] as Telegram
+usecase [Telegram\nChannel\n<$messages_queued>] as Channel
+
+'Relations
+Sender --> EmailRouting: Send email to\nconfigured address
+EmailRouting --> Worker: Forward email\n[Email Routing Rule]
+Worker --> Telegram: POST /sendMessage
+Telegram --> Channel: Send message
+
+
+@enduml
