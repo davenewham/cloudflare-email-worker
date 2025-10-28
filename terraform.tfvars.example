@@ -1,0 +1,11 @@
+cloudflare_account_id = "abc"
+cloudflare_zone_id = "abc"
+cloudflare_api_token = "secret"
+
+domain = "example.com"
+email_address = "example@example.com"
+
+telegram_channel_id = "123"
+telegram_token = "secret"
+
+worker_script_path = "dist/index.js"

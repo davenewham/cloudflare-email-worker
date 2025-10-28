@@ -1,0 +1,29 @@
+{
+  "name": "cloudflare-email-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsdown",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davenewham/cloudflare-email-worker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davenewham/cloudflare-email-worker/issues"
+  },
+  "homepage": "https://github.com/davenewham/cloudflare-email-worker#readme",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251014.0",
+    "tsdown": "^0.15.11",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "postal-mime": "^2.6.0"
+  }
+}
